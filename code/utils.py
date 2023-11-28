@@ -140,6 +140,13 @@ class Data:
             db.close()
 
 
+def cdf_round(image: np.ndarray):
+    hist = cv2.calcHist([image], [0], None, [L], [0, L])
+    hist /= np.sum(hist)
+    cdf = np.cumsum(hist)
+    return np.round(cdf * (L - 1)).astype(np.uint8)
+
+
 if __name__ == "__main__":
     data_processor = Data(root_path="../")
     # data.store_in_sqlite()
