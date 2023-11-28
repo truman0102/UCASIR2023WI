@@ -2,6 +2,8 @@ import os
 import csv
 from collections import namedtuple, defaultdict
 
+csv.field_size_limit(500 * 1024 * 1024)
+
 
 def rename(filename, conjunction="_"):
     return conjunction.join(filename.split("."))
@@ -9,6 +11,7 @@ def rename(filename, conjunction="_"):
 
 class Data:
     def __init__(self, root_path=os.getcwd()):
+        self.root_path = root_path
         self.data_dict = defaultdict(dict)
 
         self.data_dict["collection.sampled.tsv"] = {
@@ -93,4 +96,50 @@ class Data:
             raise NotImplementedError
 
     def read_in_memory(self):
+        """
+        读取文件到内存中
+        """
         self.dataset = {}
+        for file, d in self.data_dict.items():
+            self.dataset[d["name"]] = {}
+            key = "pid" if "pid" in d["format"] else "qid"
+            for row in self.yield_file(file):
+                self.dataset[d["name"]][getattr(row, key)] = {
+                    k: v
+                    for k, v in zip(
+                        d["format"],
+                        row,
+                    )
+                    if k != key
+                }
+
+    def store_in_sqlite(self):
+        """
+        读取文件到sqlitedict中 (外存)
+        """
+        import sqlitedict
+
+        for file, d in self.data_dict.items():
+            print(f"正在处理文件{file}")
+            db = sqlitedict.SqliteDict(
+                os.path.join(self.root_path, "data", f"{d['name']}.db"),
+                tablename=d["name"],
+                autocommit=True,
+            )
+            key = "pid" if "pid" in d["format"] else "qid"
+            for row in self.yield_file(file):
+                db[getattr(row, key)] = {
+                    k: v
+                    for k, v in zip(
+                        d["format"],
+                        row,
+                    )
+                    if k != key
+                }
+            print(f"文件{file}处理完成")
+            db.close()
+
+
+if __name__ == "__main__":
+    data_processor = Data(root_path="../")
+    # data.store_in_sqlite()
