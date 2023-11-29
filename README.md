@@ -97,7 +97,7 @@ See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) fo
 
 ## Installation
 
-[Main requirements](https://github.com/luyug/Reranker#installation-and-dependencies) should be fllowed.
+[Requirements](https://github.com/luyug/Reranker#installation-and-dependencies) from the reference model should be fllowed.
 
 ## Evaluation
 
