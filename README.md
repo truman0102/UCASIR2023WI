@@ -10,6 +10,18 @@ Know more aoubt TREC 2022 from the [Overview paper](https://trec.nist.gov/pubs/t
 
 ## Dataset
 
+A data processor is provided to load the dataset.
+
+```python
+from /code/utils import Data
+data_processor = Data()
+```
+Call `read_in_memory()` to load the dataset into memory.
+
+```python
+data_processor.read_in_memory()
+```
+
 A tutorial of how to load and process the dataset can be found in [data.ipynb](/code/data.ipynb)
 
 ## Models
@@ -35,6 +47,8 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 #### [HLATR](https://trec.nist.gov/pubs/trec31/papers/Ali.D.pdf)
 
 ### Ours
+
+Our model is based on the [reranker](#reranker-required) model.
 
 See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) for details.
 
