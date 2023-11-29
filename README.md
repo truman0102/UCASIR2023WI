@@ -48,7 +48,7 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 
 ### Ours
 
-Our model is based on the [reranker](#reranker-required) model.
+Our model is based on the [Reranker](#reranker-required) model.
 
 See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) for details.
 
