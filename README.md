@@ -18,7 +18,11 @@ A tutorial of how to load and process the dataset can be found in [data.ipynb](/
 
 #### [ColBERT](https://github.com/stanford-futuredata/ColBERT) (required)
 
+Download the model from [here](https://huggingface.co/colbert-ir/colbertv2.0)
+
 #### [reranking BERT](https://github.com/nyu-dl/dl4marco-bert) (optional)
+
+Download the model from [here](https://huggingface.co/amberoad/bert-multilingual-passage-reranking-msmarco)
 
 #### [CIP](https://trec.nist.gov/pubs/trec31/papers/CIP.D.pdf) (optional)
 

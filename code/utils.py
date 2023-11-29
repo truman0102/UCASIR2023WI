@@ -101,6 +101,7 @@ class Data:
         """
         self.dataset = {}
         for file, d in self.data_dict.items():
+            print(f"正在处理文件{file}", end=" ")
             self.dataset[d["name"]] = {}
             key = "pid" if "pid" in d["format"] else "qid"
             for row in self.yield_file(file):
