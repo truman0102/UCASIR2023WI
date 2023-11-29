@@ -143,4 +143,3 @@ class Data:
 
 if __name__ == "__main__":
     data_processor = Data(root_path="../")
-    # data.store_in_sqlite()

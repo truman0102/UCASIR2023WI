@@ -10,7 +10,7 @@ Know more aoubt TREC 2022 from the [Overview paper](https://trec.nist.gov/pubs/t
 
 ## Dataset
 
-A data processor is provided to load the dataset. The dataset is stored in the `data` folder. Call `read_in_memory()` to load the dataset into memory.
+A [data processor](/code/utils.py) is provided to load the dataset. The dataset is stored in the `data` folder. Call `read_in_memory()` to load the dataset into memory.
 
 ```python
 from utils import Data
