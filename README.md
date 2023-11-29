@@ -95,6 +95,10 @@ See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) fo
 └── ...
 ```
 
+## Installation
+
+[Main requirements](https://github.com/luyug/Reranker#installation-and-dependencies) should be fllowed.
+
 ## Evaluation
 
 ### Metrics
