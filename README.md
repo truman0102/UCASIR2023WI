@@ -56,9 +56,24 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 
 ### Ours
 
-Our model is based on the [Reranker](#reranker-required) model.
+Our model is based on the [Reranker](#reranker-required) model. The input of the model is the embedding (max length 512) of a pair of query and passage/sentence, and the output is a score indicating the relevance of the pair.
 
 See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) for details.
+
+## Training
+
+### Loss Function
+
+#### Contrastive Loss
+
+$$
+\begin{aligned}
+L&=-\log\frac{\exp(score(q,d^+))}{\sum_{d\in G_q}\exp(score(q,d))}\\
+&=-score(q,d^+)+\log\sum_{d\in G_q}\exp(score(q,d))
+\end{aligned}
+$$
+
+where $G_q$ is the set of passages containing the positive passage $d^+$ for query $q$ and sampled negative passages $d^-$, and $score(q,d)$ is the score of the pair of query $q$ and passage $d$, which is the output of the model.
 
 ## Structure
 
