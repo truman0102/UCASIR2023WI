@@ -10,16 +10,24 @@ Know more aoubt TREC 2022 from the [Overview paper](https://trec.nist.gov/pubs/t
 
 ## Dataset
 
-A data processor is provided to load the dataset.
+A data processor is provided to load the dataset. The dataset is stored in the `data` folder. Call `read_in_memory()` to load the dataset into memory.
 
 ```python
-from /code/utils import Data
+from utils import Data
 data_processor = Data()
-```
-Call `read_in_memory()` to load the dataset into memory.
-
-```python
 data_processor.read_in_memory()
+```
+```bash
+# output
+正在处理文件collection.sampled.tsv 读取文件的格式为('pid', 'passage')
+正在处理文件train_sample_queries.tsv 读取文件的格式为('qid', 'query')
+正在处理文件train_sample_passv2_qrels.tsv 读取文件的格式为('qid', 'mark', 'pid', 'rating')
+正在处理文件val_2021_53_queries.tsv 读取文件的格式为('qid', 'query')
+正在处理文件val_2021_passage_top100.txt 读取文件的格式为('qid', 'mark', 'pid', 'rank', 'score', 'sys_id')
+正在处理文件val_2021.qrels.pass.final.txt 读取文件的格式为('qid', 'mark', 'pid', 'rating')
+正在处理文件test_2022_76_queries.tsv 读取文件的格式为('qid', 'query')
+正在处理文件test_2022_passage_top100.txt 读取文件的格式为('qid', 'mark', 'pid', 'rank', 'score', 'sys_id')
+正在处理文件test_2022.qrels.pass.withDupes.txt 读取文件的格式为('qid', 'mark', 'pid', 'rating')
 ```
 
 A tutorial of how to load and process the dataset can be found in [data.ipynb](/code/data.ipynb)
