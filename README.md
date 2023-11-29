@@ -12,21 +12,27 @@ Know more aoubt TREC 2022 from the [Overview paper](https://trec.nist.gov/pubs/t
 
 A tutorial of how to load and process the dataset can be found in [data.ipynb](/code/data.ipynb)
 
-## Model
+## Models
 
 ### Reference Model
 
-#### [ColBERT](https://github.com/stanford-futuredata/ColBERT) (required)
+#### [Reranker](https://github.com/luyug/Reranker) (required)
+
+Download the model from [here](https://huggingface.co/Luyu/bert-base-mdoc-bm25)
+
+#### [~~ColBERT~~](https://github.com/stanford-futuredata/ColBERT) (optional)
 
 Download the model from [here](https://huggingface.co/colbert-ir/colbertv2.0)
 
-#### [reranking BERT](https://github.com/nyu-dl/dl4marco-bert) (optional)
+#### [~~reranking BERT~~](https://github.com/nyu-dl/dl4marco-bert) (optional)
 
 Download the model from [here](https://huggingface.co/amberoad/bert-multilingual-passage-reranking-msmarco)
 
-#### [CIP](https://trec.nist.gov/pubs/trec31/papers/CIP.D.pdf) (optional)
+### Reports in TREC 2022
 
-#### [HLATR](https://trec.nist.gov/pubs/trec31/papers/Ali.D.pdf) (optional)
+#### [CIP](https://trec.nist.gov/pubs/trec31/papers/CIP.D.pdf)
+
+#### [HLATR](https://trec.nist.gov/pubs/trec31/papers/Ali.D.pdf)
 
 ### Ours
 
@@ -37,6 +43,8 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 │   ├── ...
 │   │   ├── ...
 │   ├── data.ipynb
+│   ├── reranker.ipynb
+│   ├── test.ipynb
 │   ├── utils.py
 │   └── ...
 ├── data
@@ -47,6 +55,10 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 │   ├── train_sample_queries.tsv
 │   └── ...
 ├── model
+│   ├── Reranker
+│   │   ├── config.json
+│   │   ├── pytorch_model.bin
+│   │   └── ...
 │   ├── ColBERT
 │   │   ├── config.json
 │   │   ├── pytorch_model.bin
@@ -63,6 +75,7 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 ├── papers.bib
 ├── requirements.txt
 ├── README.md
+├── .gitignore
 └── ...
 ```
 
