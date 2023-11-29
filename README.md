@@ -36,6 +36,8 @@ Download the model from [here](https://huggingface.co/amberoad/bert-multilingual
 
 ### Ours
 
+See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) for details.
+
 ## Structure
 
 ```bash
