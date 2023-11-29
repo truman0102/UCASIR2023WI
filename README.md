@@ -12,6 +12,20 @@ Know more aoubt TREC 2022 from the [Overview paper](https://trec.nist.gov/pubs/t
 
 A tutorial of how to load and process the dataset can be found in [data.ipynb](/code/data.ipynb)
 
+## Model
+
+### Reference Model
+
+#### [ColBERT](https://github.com/stanford-futuredata/ColBERT) (required)
+
+#### [reranking BERT](https://github.com/nyu-dl/dl4marco-bert) (optional)
+
+#### [CIP](https://trec.nist.gov/pubs/trec31/papers/CIP.D.pdf) (optional)
+
+#### [HLATR](https://trec.nist.gov/pubs/trec31/papers/Ali.D.pdf) (optional)
+
+### Ours
+
 ## Structure
 
 ```bash
@@ -27,12 +41,22 @@ A tutorial of how to load and process the dataset can be found in [data.ipynb](/
 │   ├── collection.sampled.tsv
 │   ├── train_sample_passv2_qrels.tsv
 │   ├── train_sample_queries.tsv
-│   ├── ...
+│   └── ...
+├── model
+│   ├── ColBERT
+│   │   ├── config.json
+│   │   ├── pytorch_model.bin
+│   │   └── ...
+│   ├── rBERT
+│   │   ├── config.json
+│   │   ├── pytorch_model.bin
+│   │   └── ...
+├── figure
 ├── trec_eval
 │   ├── test
 │   │   ├── ...
 │   └── ...
-├── .gitignore
+├── papers.bib
 ├── requirements.txt
 ├── README.md
 └── ...
