@@ -1,3 +1,10 @@
+---
+title: UCASIR2023WI
+output:
+  html_document:
+    toc: yes
+---
+
 # UCASIR2023WI
 
 This is the group work for Information Retrieval course in UCAS.
@@ -74,6 +81,12 @@ L&=-\log\frac{\exp(score(q,d^+))}{\sum_{d\in G_q}\exp(score(q,d))}\\
 $$
 
 where $G_q$ is the set of passages containing the positive passage $d^+$ for query $q$ and sampled negative passages $d^-$, and $score(q,d)$ is the score of the pair of query $q$ and passage $d$, which is the output of the model.
+
+Given a set of queries $Q$ and passages $D$, the loss function is
+
+$$
+L=\sum_{q\in Q}\sum_{d\in G_q}L(q,d)
+$$
 
 ## Structure
 
