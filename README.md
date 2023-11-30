@@ -84,8 +84,28 @@ where $G_q$ is the set of passages containing the positive passage $d^+$ for que
 Given a set of queries $Q$ and passages $D$, the loss function is
 
 $$
-L=\sum_{q\in Q}\sum_{d\in G_q}L(q,d)
+L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in G_q}L(q,d)
 $$
+
+It is worth noting that the CL aims to maximize the score of the positive passage and minimize the scores of the sum of all passages, strictly requiring the quality of retrieved passages $$G_q$$.
+
+#### Absolute Margin Ranking Loss
+
+A boundary $$\mu$$ with a margin $$\sigma$$ is set to separate the positive and negative samples.
+
+For inputs full of negative samples, the loss function is
+
+$$
+L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in N_q}\max(0,\mu-\sigma-score(q,d))
+$$
+
+For inputs containing positive samples, the loss function is
+
+$$
+L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in P_q}\max(0,score(q,d)-\mu-\sigma)
+$$
+
+where $P_q$ is the set of positive passages for query $q$ and $N_q$ is the set of negative passages for query $q$. The quality of $$N_q$$ is strictly required.
 
 ## Structure
 
