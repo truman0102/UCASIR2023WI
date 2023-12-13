@@ -1,5 +1,3 @@
-.gitignore
-/Reranker
 /code/__pycache__
 /model/rBERT/pytorch_model.bin
 /model/ColBERT/pytorch_model.bin

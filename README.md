@@ -68,6 +68,12 @@ See [reranker.ipynb](/code/reranker.ipynb) and [test.ipynb](/code/test.ipynb) fo
 
 ## Training
 
+### Data Generation
+
+Reranker has the advantage of being able to give a higher score to the correct answer, but it does not do a good job of judging texts that are semantically similar but are not actually the correct answer.
+
+Given the correct answer to a question, we try to replace certain words in the text to generate a semantically similar but incorrect answer. Random substitutions can be detrimental to the legitimacy of the utterance and the quality of the generated data, such as replacing a noun with a verb or changing an irrelevant preposition. In contrast, replacing words by referring to dependency analysis trees in natural language processing results in more stable generated data.
+
 ### Loss Function
 
 #### Contrastive Loss
@@ -89,7 +95,7 @@ $$
 
 It is worth noting that the CL aims to maximize the score of the positive passage and minimize the scores of the sum of all passages, strictly requiring the quality of retrieved passages $G_q$.
 
-#### Absolute Margin Ranking Loss
+#### ~~Absolute Margin Ranking Loss~~
 
 A boundary $\mu$ with a margin $\sigma$ is set to separate the positive and negative samples.
 
