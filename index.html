@@ -1,434 +1,272 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="generator" content="pandoc" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>README</title>
-    <style>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>index</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
       html {
-        color: #1a1a1a;
-        background-color: #fdfdfd;
+        background-color: white;
       }
       body {
-        margin: 0 auto;
-        max-width: 36em;
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        hyphens: auto;
-        overflow-wrap: break-word;
-        text-rendering: optimizeLegibility;
-        font-kerning: normal;
-      }
-      @media (max-width: 600px) {
-        body {
-          font-size: 0.9em;
-          padding: 12px;
-        }
-        h1 {
-          font-size: 1.8em;
-        }
-      }
-      @media print {
-        html {
-          background-color: white;
-        }
-        body {
-          background-color: transparent;
-          color: black;
-          font-size: 12pt;
-        }
-        p,
-        h2,
-        h3 {
-          orphans: 3;
-          widows: 3;
-        }
-        h2,
-        h3,
-        h4 {
-          page-break-after: avoid;
-        }
-      }
-      p {
-        margin: 1em 0;
-      }
-      a {
-        color: #1a1a1a;
-      }
-      a:visited {
-        color: #1a1a1a;
-      }
-      img {
-        max-width: 100%;
-      }
-      svg {
-        height: auto;
-        max-width: 100%;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin-top: 1.4em;
-      }
-      h5,
-      h6 {
-        font-size: 1em;
-        font-style: italic;
-      }
-      h6 {
-        font-weight: normal;
-      }
-      ol,
-      ul {
-        padding-left: 1.7em;
-        margin-top: 1em;
-      }
-      li > ol,
-      li > ul {
-        margin-top: 0;
-      }
-      blockquote {
-        margin: 1em 0 1em 1.7em;
-        padding-left: 1em;
-        border-left: 2px solid #e6e6e6;
-        color: #606060;
-      }
-      code {
-        font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
-        font-size: 85%;
-        margin: 0;
-        hyphens: manual;
-      }
-      pre {
-        margin: 1em 0;
-        overflow: auto;
-      }
-      pre code {
-        padding: 0;
-        overflow: visible;
-        overflow-wrap: normal;
-      }
-      .sourceCode {
         background-color: transparent;
-        overflow: visible;
+        color: black;
+        font-size: 12pt;
       }
-      hr {
-        background-color: #1a1a1a;
-        border: none;
-        height: 1px;
-        margin: 1em 0;
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
       }
-      table {
-        margin: 1em 0;
-        border-collapse: collapse;
-        width: 100%;
-        overflow-x: auto;
-        display: block;
-        font-variant-numeric: lining-nums tabular-nums;
+      h2, h3, h4 {
+        page-break-after: avoid;
       }
-      table caption {
-        margin-bottom: 0.75em;
-      }
-      tbody {
-        margin-top: 0.5em;
-        border-top: 1px solid #1a1a1a;
-        border-bottom: 1px solid #1a1a1a;
-      }
-      th {
-        border-top: 1px solid #1a1a1a;
-        padding: 0.25em 0.5em 0.25em 0.5em;
-      }
-      td {
-        padding: 0.125em 0.5em 0.25em 0.5em;
-      }
-      header {
-        margin-bottom: 4em;
-        text-align: center;
-      }
-      #TOC li {
-        list-style: none;
-      }
-      #TOC ul {
-        padding-left: 1.3em;
-      }
-      #TOC > ul {
-        padding-left: 0;
-      }
-      #TOC a:not(:hover) {
-        text-decoration: none;
-      }
-      code {
-        white-space: pre-wrap;
-      }
-      span.smallcaps {
-        font-variant: small-caps;
-      }
-      div.columns {
-        display: flex;
-        gap: min(4vw, 1.5em);
-      }
-      div.column {
-        flex: auto;
-        overflow-x: auto;
-      }
-      div.hanging-indent {
-        margin-left: 1.5em;
-        text-indent: -1.5em;
-      }
-      /* The extra [class] is a hack that increases specificity enough to
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
-      ul.task-list[class] {
-        list-style: none;
-      }
-      ul.task-list li input[type="checkbox"] {
-        font-size: inherit;
-        width: 0.8em;
-        margin: 0 0.8em 0.2em -1.6em;
-        vertical-align: middle;
-      }
-      /* CSS for syntax highlighting */
-      pre > code.sourceCode {
-        white-space: pre;
-        position: relative;
-      }
-      pre > code.sourceCode > span {
-        line-height: 1.25;
-      }
-      pre > code.sourceCode > span:empty {
-        height: 1.2em;
-      }
-      .sourceCode {
-        overflow: visible;
-      }
-      code.sourceCode > span {
-        color: inherit;
-        text-decoration: inherit;
-      }
-      div.sourceCode {
-        margin: 1em 0;
-      }
-      pre.sourceCode {
-        margin: 0;
-      }
-      @media screen {
-        div.sourceCode {
-          overflow: auto;
-        }
-      }
-      @media print {
-        pre > code.sourceCode {
-          white-space: pre-wrap;
-        }
-        pre > code.sourceCode > span {
-          text-indent: -5em;
-          padding-left: 5em;
-        }
-      }
-      pre.numberSource code {
-        counter-reset: source-line 0;
-      }
-      pre.numberSource code > span {
-        position: relative;
-        left: -4em;
-        counter-increment: source-line;
-      }
-      pre.numberSource code > span > a:first-child::before {
-        content: counter(source-line);
-        position: relative;
-        left: -1em;
-        text-align: right;
-        vertical-align: baseline;
-        border: none;
-        display: inline-block;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        padding: 0 4px;
-        width: 4em;
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
         color: #aaaaaa;
       }
-      pre.numberSource {
-        margin-left: 3em;
-        border-left: 1px solid #aaaaaa;
-        padding-left: 4px;
-      }
-      div.sourceCode {
-      }
-      @media screen {
-        pre > code.sourceCode > span > a:first-child::before {
-          text-decoration: underline;
-        }
-      }
-      code span.al {
-        color: #ff0000;
-        font-weight: bold;
-      } /* Alert */
-      code span.an {
-        color: #60a0b0;
-        font-weight: bold;
-        font-style: italic;
-      } /* Annotation */
-      code span.at {
-        color: #7d9029;
-      } /* Attribute */
-      code span.bn {
-        color: #40a070;
-      } /* BaseN */
-      code span.bu {
-        color: #008000;
-      } /* BuiltIn */
-      code span.cf {
-        color: #007020;
-        font-weight: bold;
-      } /* ControlFlow */
-      code span.ch {
-        color: #4070a0;
-      } /* Char */
-      code span.cn {
-        color: #880000;
-      } /* Constant */
-      code span.co {
-        color: #60a0b0;
-        font-style: italic;
-      } /* Comment */
-      code span.cv {
-        color: #60a0b0;
-        font-weight: bold;
-        font-style: italic;
-      } /* CommentVar */
-      code span.do {
-        color: #ba2121;
-        font-style: italic;
-      } /* Documentation */
-      code span.dt {
-        color: #902000;
-      } /* DataType */
-      code span.dv {
-        color: #40a070;
-      } /* DecVal */
-      code span.er {
-        color: #ff0000;
-        font-weight: bold;
-      } /* Error */
-      code span.ex {
-      } /* Extension */
-      code span.fl {
-        color: #40a070;
-      } /* Float */
-      code span.fu {
-        color: #06287e;
-      } /* Function */
-      code span.im {
-        color: #008000;
-        font-weight: bold;
-      } /* Import */
-      code span.in {
-        color: #60a0b0;
-        font-weight: bold;
-        font-style: italic;
-      } /* Information */
-      code span.kw {
-        color: #007020;
-        font-weight: bold;
-      } /* Keyword */
-      code span.op {
-        color: #666666;
-      } /* Operator */
-      code span.ot {
-        color: #007020;
-      } /* Other */
-      code span.pp {
-        color: #bc7a00;
-      } /* Preprocessor */
-      code span.sc {
-        color: #4070a0;
-      } /* SpecialChar */
-      code span.ss {
-        color: #bb6688;
-      } /* SpecialString */
-      code span.st {
-        color: #4070a0;
-      } /* String */
-      code span.va {
-        color: #19177c;
-      } /* Variable */
-      code span.vs {
-        color: #4070a0;
-      } /* VerbatimString */
-      code span.wa {
-        color: #60a0b0;
-        font-weight: bold;
-        font-style: italic;
-      } /* Warning */
-    </style>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
-      type="text/javascript"
-    ></script>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <!-- ---
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!-- ---
 output:
   html_document:
     toc: yes
 --- -->
-    <h1 id="ucasir2023wi">UCASIR2023WI</h1>
-    <p>This is the group work for Information Retrieval course in UCAS.</p>
-    <h2 id="introduction">Introduction</h2>
-    <p>
-      The task of this project is to rerank retrieved passages of
-      <a href="https://microsoft.github.io/msmarco/TREC-Deep-Learning-2022"
-        >TREC 2022</a
-      >.
-    </p>
-    <p>
-      Know more aoubt TREC 2022 from the
-      <a href="https://trec.nist.gov/pubs/trec31/papers/Overview_deep.pdf"
-        >Overview paper</a
-      >
-      and
-      <a href="https://trec.nist.gov/pubs/trec31/xref.html#deep"
-        >other reports</a
-      >.
-    </p>
-    <h2 id="dataset">Dataset</h2>
-    <p>
-      A
-      <a
-        href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/utils.py"
-        >data processor</a
-      >
-      is provided to load the dataset. The dataset is stored in the
-      <code>data</code> folder. Call <code>read_in_memory()</code> to load the
-      dataset into memory.
-    </p>
-    <div class="sourceCode" id="cb1">
-      <pre
-        class="sourceCode python"
-      ><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utils <span class="im">import</span> Data</span>
+<h1 id="ucasir2023wi">UCASIR2023WI</h1>
+<p>This is the group work for Information Retrieval course in UCAS.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The task of this project is to rerank retrieved passages of <a
+href="https://microsoft.github.io/msmarco/TREC-Deep-Learning-2022">TREC
+2022</a>.</p>
+<p>Know more aoubt TREC 2022 from the <a
+href="https://trec.nist.gov/pubs/trec31/papers/Overview_deep.pdf">Overview
+paper</a> and <a
+href="https://trec.nist.gov/pubs/trec31/xref.html#deep">other
+reports</a>.</p>
+<h2 id="dataset">Dataset</h2>
+<p>A <a
+href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/utils.py">data
+processor</a> is provided to load the dataset. The dataset is stored in
+the <code>data</code> folder. Call <code>read_in_memory()</code> to load
+the dataset into memory.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> utils <span class="im">import</span> Data</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_processor <span class="op">=</span> Data()</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_processor.read_in_memory()</span></code></pre>
-    </div>
-    <div class="sourceCode" id="cb2">
-      <pre
-        class="sourceCode bash"
-      ><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_processor.read_in_memory()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件collection.sampled.tsv</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;pid&#39;</span><span class="ex">,</span> <span class="st">&#39;passage&#39;</span><span class="kw">)</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件train_sample_queries.tsv</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;query&#39;</span><span class="kw">)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件train_sample_passv2_qrels.tsv</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;mark&#39;</span>, <span class="st">&#39;pid&#39;</span>, <span class="st">&#39;rating&#39;</span><span class="kw">)</span></span>
@@ -437,194 +275,154 @@ output:
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件val_2021.qrels.pass.final.txt</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;mark&#39;</span>, <span class="st">&#39;pid&#39;</span>, <span class="st">&#39;rating&#39;</span><span class="kw">)</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件test_2022_76_queries.tsv</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;query&#39;</span><span class="kw">)</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件test_2022_passage_top100.txt</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;mark&#39;</span>, <span class="st">&#39;pid&#39;</span>, <span class="st">&#39;rank&#39;</span>, <span class="st">&#39;score&#39;</span>, <span class="st">&#39;sys_id&#39;</span><span class="kw">)</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件test_2022.qrels.pass.withDupes.txt</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;mark&#39;</span>, <span class="st">&#39;pid&#39;</span>, <span class="st">&#39;rating&#39;</span><span class="kw">)</span></span></code></pre>
-    </div>
-    <p>
-      A tutorial of how to load and process the dataset can be found in
-      <a
-        href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/data.ipynb"
-        >data.ipynb</a
-      >
-    </p>
-    <h2 id="models">Models</h2>
-    <h3 id="reference-model">Reference Model</h3>
-    <h4 id="reranker-required">
-      <a href="https://github.com/luyug/Reranker">Reranker</a> (required)
-    </h4>
-    <p>
-      Download the model from
-      <a href="https://huggingface.co/Luyu/bert-base-mdoc-bm25">here</a>
-    </p>
-    <h4 id="colbert-optional">
-      <a href="https://github.com/stanford-futuredata/ColBERT"
-        ><del>ColBERT</del></a
-      >
-      (optional)
-    </h4>
-    <p>
-      Download the model from
-      <a href="https://huggingface.co/colbert-ir/colbertv2.0">here</a>
-    </p>
-    <h4 id="reranking-bert-optional">
-      <a href="https://github.com/nyu-dl/dl4marco-bert"
-        ><del>reranking BERT</del></a
-      >
-      (optional)
-    </h4>
-    <p>
-      Download the model from
-      <a
-        href="https://huggingface.co/amberoad/bert-multilingual-passage-reranking-msmarco"
-        >here</a
-      >
-    </p>
-    <h3 id="reports-in-trec-2022">Reports in TREC 2022</h3>
-    <h4 id="cip">
-      <a href="https://trec.nist.gov/pubs/trec31/papers/CIP.D.pdf">CIP</a>
-    </h4>
-    <h4 id="hlatr">
-      <a href="https://trec.nist.gov/pubs/trec31/papers/Ali.D.pdf">HLATR</a>
-    </h4>
-    <h3 id="ours">Ours</h3>
-    <p>
-      Our model is based on the <a href="#reranker-required">Reranker</a> model.
-      The input of the model is the embedding (max length 512) of a pair of
-      query and passage/sentence, and the output is a score indicating the
-      relevance of the pair.
-    </p>
-    <p>
-      See
-      <a
-        href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/reranker.ipynb"
-        >reranker.ipynb</a
-      >
-      and
-      <a
-        href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/test.ipynb"
-        >test.ipynb</a
-      >
-      for details.
-    </p>
-    <h2 id="training">Training</h2>
-    <h3 id="loss-function">Loss Function</h3>
-    <h4 id="contrastive-loss">Contrastive Loss</h4>
-    <p>
-      <span class="math display"
-        >\[ \begin{aligned} L&amp;=-\log\frac{\exp(score(q,d^+))}{\sum_{d\in
-        G_q}\exp(score(q,d))}\\ &amp;=-score(q,d^+)+\log\sum_{d\in
-        G_q}\exp(score(q,d)) \end{aligned} \]</span
-      >
-    </p>
-    <p>
-      where <span class="math inline">\(G_q\)</span> is the set of passages
-      containing the positive passage
-      <span class="math inline">\(d^+\)</span> for query
-      <span class="math inline">\(q\)</span> and sampled negative passages
-      <span class="math inline">\(d^-\)</span>, and
-      <span class="math inline">\(score(q,d)\)</span> is the score of the pair
-      of query <span class="math inline">\(q\)</span> and passage
-      <span class="math inline">\(d\)</span>, which is the output of the model.
-    </p>
-    <p>
-      Given a set of queries <span class="math inline">\(Q\)</span> and passages
-      <span class="math inline">\(D\)</span>, the loss function is
-    </p>
-    <p>
-      <span class="math display"
-        >\[ L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in G_q}L(q,d) \]</span
-      >
-    </p>
-    <p>
-      It is worth noting that the CL aims to maximize the score of the positive
-      passage and minimize the scores of the sum of all passages, strictly
-      requiring the quality of retrieved passages
-      <span class="math inline">\(G_q\)</span>.
-    </p>
-    <h4 id="absolute-margin-ranking-loss">Absolute Margin Ranking Loss</h4>
-    <p>
-      A boundary <span class="math inline">\(\mu\)</span> with a margin
-      <span class="math inline">\(\sigma\)</span> is set to separate the
-      positive and negative samples.
-    </p>
-    <p>For inputs full of negative samples, the loss function is</p>
-    <p>
-      <span class="math display"
-        >\[ L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in
-        N_q}\max(0,\mu-\sigma-score(q,d)) \]</span
-      >
-    </p>
-    <p>For inputs containing positive samples, the loss function is</p>
-    <p>
-      <span class="math display"
-        >\[ L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in
-        P_q}\max(0,score(q,d)-\mu-\sigma) \]</span
-      >
-    </p>
-    <p>
-      where <span class="math inline">\(P_q\)</span> is the set of positive
-      passages for query <span class="math inline">\(q\)</span> and
-      <span class="math inline">\(N_q\)</span> is the set of negative passages
-      for query <span class="math inline">\(q\)</span>. The quality of
-      <span class="math inline">\(N_q\)</span> is strictly required.
-    </p>
-    <h2 id="structure">Structure</h2>
-    <div class="sourceCode" id="cb3">
-      <pre
-        class="sourceCode bash"
-      ><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> code</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ...</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── ...</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── data.ipynb</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── reranker.ipynb</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── test.ipynb</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── utils.py</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ...</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── ...</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── collection.sampled.tsv</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── train_sample_passv2_qrels.tsv</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── train_sample_queries.tsv</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> model</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── Reranker</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── config.json</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── pytorch_model.bin</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   └── ...</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ColBERT</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── config.json</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── pytorch_model.bin</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   └── ...</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── rBERT</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── config.json</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── pytorch_model.bin</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   └── ...</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> figure</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> trec_eval</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── test</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── ...</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> papers.bib</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> requirements.txt</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> ...</span></code></pre>
-    </div>
-    <h2 id="installation">Installation</h2>
-    <p>
-      <a href="https://github.com/luyug/Reranker#installation-and-dependencies"
-        >Requirements</a
-      >
-      from the reference model should be fllowed.
-    </p>
-    <h2 id="evaluation">Evaluation</h2>
-    <h3 id="metrics">Metrics</h3>
-    <ul>
-      <li>NDGC@10</li>
-      <li>
-        Ground Truth: files that contain <code>qrels</code> in their names
-      </li>
-    </ul>
-    <h3 id="run">Run</h3>
-  </body>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">正在处理文件test_2022.qrels.pass.withDupes.txt</span> 读取文件的格式为<span class="er">(</span><span class="st">&#39;qid&#39;</span><span class="ex">,</span> <span class="st">&#39;mark&#39;</span>, <span class="st">&#39;pid&#39;</span>, <span class="st">&#39;rating&#39;</span><span class="kw">)</span></span></code></pre></div>
+<p>A tutorial of how to load and process the dataset can be found in <a
+href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/data.ipynb">data.ipynb</a></p>
+<h2 id="models">Models</h2>
+<h3 id="reference-model">Reference Model</h3>
+<h4 id="reranker-required"><a
+href="https://github.com/luyug/Reranker">Reranker</a> (required)</h4>
+<p>Download the model from <a
+href="https://huggingface.co/Luyu/bert-base-mdoc-bm25">here</a></p>
+<h4 id="colbert-optional"><a
+href="https://github.com/stanford-futuredata/ColBERT"><del>ColBERT</del></a>
+(optional)</h4>
+<p>Download the model from <a
+href="https://huggingface.co/colbert-ir/colbertv2.0">here</a></p>
+<h4 id="reranking-bert-optional"><a
+href="https://github.com/nyu-dl/dl4marco-bert"><del>reranking
+BERT</del></a> (optional)</h4>
+<p>Download the model from <a
+href="https://huggingface.co/amberoad/bert-multilingual-passage-reranking-msmarco">here</a></p>
+<h3 id="reports-in-trec-2022">Reports in TREC 2022</h3>
+<h4 id="cip"><a
+href="https://trec.nist.gov/pubs/trec31/papers/CIP.D.pdf">CIP</a></h4>
+<h4 id="hlatr"><a
+href="https://trec.nist.gov/pubs/trec31/papers/Ali.D.pdf">HLATR</a></h4>
+<h3 id="ours">Ours</h3>
+<p>Our model is based on the <a href="#reranker-required">Reranker</a>
+model. The input of the model is the embedding (max length 512) of a
+pair of query and passage/sentence, and the output is a score indicating
+the relevance of the pair.</p>
+<p>See <a
+href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/reranker.ipynb">reranker.ipynb</a>
+and <a
+href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/test.ipynb">test.ipynb</a>
+for details.</p>
+<h2 id="training">Training</h2>
+<h3 id="data-generation">Data Generation</h3>
+<p>Reranker has the advantage of being able to give a higher score to
+the correct answer, but it does not do a good job of judging texts that
+are semantically similar but are not actually the correct answer.</p>
+<p>Given the correct answer to a question, we try to replace certain
+words in the text to generate a semantically similar but incorrect
+answer. Random substitutions can be detrimental to the legitimacy of the
+utterance and the quality of the generated data, such as replacing a
+noun with a verb or changing an irrelevant preposition. In contrast,
+replacing words by referring to dependency analysis trees in natural
+language processing results in more stable generated data.</p>
+<p>For each passage, we split it into sentences and conduct tokenization
+and dependency analysis, generating a dictionary to store the index,
+lemma, POS, and dependency of each token. Each passage is constructed
+into a dictionary with the following format:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  passage_id:{</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span>: [</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      (token_index, token_text, token_lemma, token_pos, token_tag, token_dep, token_parent, token_parent_index),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      ...</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>: [</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      (token_index, token_text, token_lemma, token_pos, token_tag, token_dep, token_parent, token_parent_index),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      ...</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>The data is stored in <a href="">passage_tokens.pkl</a> and is
+detailed in <a
+href="https://github.com/truman0102/UCASIR2023WI/blob/main/code/gen.ipynb">gen.ipynb</a>.</p>
+<h3 id="loss-function">Loss Function</h3>
+<h4 id="contrastive-loss">Contrastive Loss</h4>
+<p><span class="math display">\[
+\begin{aligned}
+L&amp;=-\log\frac{\exp(score(q,d^+))}{\sum_{d\in G_q}\exp(score(q,d))}\\
+&amp;=-score(q,d^+)+\log\sum_{d\in G_q}\exp(score(q,d))
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(G_q\)</span> is the set of passages
+containing the positive passage <span class="math inline">\(d^+\)</span>
+for query <span class="math inline">\(q\)</span> and sampled negative
+passages <span class="math inline">\(d^-\)</span>, and <span
+class="math inline">\(score(q,d)\)</span> is the score of the pair of
+query <span class="math inline">\(q\)</span> and passage <span
+class="math inline">\(d\)</span>, which is the output of the model.</p>
+<p>Given a set of queries <span class="math inline">\(Q\)</span> and
+passages <span class="math inline">\(D\)</span>, the loss function
+is</p>
+<p><span class="math display">\[
+L=\frac{1}{|Q|}\sum_{q\in Q}\sum_{d\in G_q}L(q,d)
+\]</span></p>
+<p>It is worth noting that the CL aims to maximize the score of the
+positive passage and minimize the scores of the sum of all passages,
+strictly requiring the quality of retrieved passages <span
+class="math inline">\(G_q\)</span>.</p>
+<h2 id="structure">Structure</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> code</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ...</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── ...</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── data.ipynb</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── reranker.ipynb</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── gen.ipynb</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── model.ipynb</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── test.ipynb</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── utils.py</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── model.py</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ...</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── ...</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── collection.sampled.tsv</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── train_sample_passv2_qrels.tsv</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── train_sample_queries.tsv</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> model</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── Reranker</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── config.json</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── pytorch_model.bin</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   └── ...</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── ColBERT</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── config.json</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── pytorch_model.bin</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   └── ...</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── rBERT</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── config.json</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── pytorch_model.bin</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   └── ...</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> figure</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> trec_eval</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> ├── test</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> │   ├── ...</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ex">│  </span> └── ...</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> papers.bib</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> requirements.txt</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> index.html</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> .gitignore</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> ...</span></code></pre></div>
+<h2 id="installation">Installation</h2>
+<p><a
+href="https://github.com/luyug/Reranker#installation-and-dependencies">Requirements</a>
+from the reference model should be fllowed.</p>
+<h2 id="evaluation">Evaluation</h2>
+<h3 id="metrics">Metrics</h3>
+<ul>
+<li>NDGC@10</li>
+<li>Ground Truth: files that contain <code>qrels</code> in their
+names</li>
+</ul>
+<h3 id="run">Run</h3>
+</body>
 </html>

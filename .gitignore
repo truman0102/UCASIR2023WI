@@ -2,3 +2,5 @@
 /model/rBERT/pytorch_model.bin
 /model/ColBERT/pytorch_model.bin
 /model/Reranker/pytorch_model.bin
+.index.md
+/data/passage_tokens.pkl
