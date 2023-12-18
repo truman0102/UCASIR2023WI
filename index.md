@@ -1,9 +1,3 @@
-<!-- ---
-output:
-  html_document:
-    toc: yes
---- -->
-
 # UCASIR2023WI
 
 This is the group work for Information Retrieval course in UCAS.
@@ -68,7 +62,13 @@ See [reranker.ipynb](https://github.com/truman0102/UCASIR2023WI/blob/main/code/r
 
 ## Training
 
-### Data Generation
+### Query Generation
+
+[DocT5query](https://github.com/castorini/docTTTTTquery) model is used to generate queries from given passages.
+
+Download the model from [huggingface](https://huggingface.co/doc2query/all-with_prefix-t5-base-v1)
+
+### Answer Generation
 
 Reranker has the advantage of being able to give a higher score to the correct answer, but it does not do a good job of judging texts that are semantically similar but are not actually the correct answer.
 
@@ -138,6 +138,10 @@ It is worth noting that the CL aims to maximize the score of the positive passag
 │   └── ...
 ├── model
 │   ├── Reranker
+│   │   ├── config.json
+│   │   ├── pytorch_model.bin
+│   │   └── ...
+│   ├── docT5query
 │   │   ├── config.json
 │   │   ├── pytorch_model.bin
 │   │   └── ...
