@@ -141,13 +141,8 @@ It is worth noting that the CL aims to maximize the score of the positive passag
 │   │   ├── config.json
 │   │   ├── pytorch_model.bin
 │   │   └── ...
-│   ├── ColBERT
-│   │   ├── config.json
-│   │   ├── pytorch_model.bin
-│   │   └── ...
-│   ├── rBERT
-│   │   ├── config.json
-│   │   ├── pytorch_model.bin
+│   ├── checkpoint
+│   │   ├── 
 │   │   └── ...
 │   └── ...
 ├── figure
