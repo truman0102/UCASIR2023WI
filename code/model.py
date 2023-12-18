@@ -18,8 +18,10 @@ class Rerank(nn.Module):
             )
         self.freeze()
 
-    def forward(self, input_ids, attention_mask=None):
-        outputs = self.model(input_ids, attention_mask=attention_mask)
+    def forward(self, input_ids, attention_mask=None, token_type_ids=None):
+        outputs = self.model(
+            input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids
+        )
         return outputs
 
     def encode(self, query, passage):
@@ -27,7 +29,11 @@ class Rerank(nn.Module):
             inputs = self.tokenizer(
                 query, passage, return_tensors="pt", padding=True, truncation=True
             )
-            return inputs["input_ids"], inputs["attention_mask"]
+            return (
+                inputs["input_ids"],
+                inputs["attention_mask"],
+                inputs["token_type_ids"],
+            )
         elif isinstance(passage, (tuple, list, set)):
             return self.encode_batch(query, passage)
 
@@ -36,6 +42,9 @@ class Rerank(nn.Module):
             (len(passages), self.max_length), dtype=torch.long
         )
         attention_mask_batch = torch.empty(
+            (len(passages), self.max_length), dtype=torch.long
+        )
+        token_type_ids_batch = torch.empty(
             (len(passages), self.max_length), dtype=torch.long
         )
         for i, passage in enumerate(passages):
@@ -49,12 +58,13 @@ class Rerank(nn.Module):
             )
             inputs_ids_batch[i] = inputs["input_ids"][0]
             attention_mask_batch[i] = inputs["attention_mask"][0]
-        return inputs_ids_batch, attention_mask_batch
+            token_type_ids_batch[i] = inputs["token_type_ids"][0]
+        return inputs_ids_batch, attention_mask_batch, token_type_ids_batch
 
     def score(self, query, passage):
-        input_ids, attention_mask = self.encode(query, passage)
+        input_ids, attention_mask, token_type_ids = self.encode(query, passage)
         with torch.no_grad():
-            logits = self.forward(input_ids, attention_mask=attention_mask).logits
+            logits = self.forward(input_ids, attention_mask, token_type_ids).logits
         return logits
 
     def freeze(self):
