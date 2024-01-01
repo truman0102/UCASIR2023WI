@@ -1,7 +1,11 @@
 /code/__pycache__
-/model/rBERT/
-/model/ColBERT/
-/model/Reranker/
 .index.md
 /data/passage_tokens.pkl
 /model/docT5query/
+/model/rBERT/
+/model/ColBERT/
+/model/Reranker/
+/code/preprocess.py
+/code/reranker_base.ipynb
+/tex/
+/final/

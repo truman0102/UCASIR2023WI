@@ -1,8 +1,26 @@
+import time
+
 import os
 import csv
+import math
+import numpy as np
 from collections import namedtuple, defaultdict
 
 csv.field_size_limit(500 * 1024 * 1024)
+
+
+def logger(msg: str):
+    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}] {msg}")
+
+
+def log(base, x):
+    """
+    log function with base
+    """
+    if x == 0:
+        return 0
+    else:
+        return np.log(x) / np.log(base)
 
 
 def rename(filename, conjunction="_"):
@@ -103,43 +121,118 @@ class Data:
         for file, d in self.data_dict.items():
             print(f"正在处理文件{file}", end=" ")
             self.dataset[d["name"]] = {}
-            key = "pid" if "pid" in d["format"] else "qid"
-            for row in self.yield_file(file):
-                self.dataset[d["name"]][getattr(row, key)] = {
-                    k: v
-                    for k, v in zip(
-                        d["format"],
-                        row,
-                    )
-                    if k != key
-                }
+            if file.__contains__("qrels"):
+                for row in self.yield_file(file):
+                    qid = getattr(row, "qid")
+                    pid = getattr(row, "pid")
+                    rate = int(getattr(row, "rating"))
+                    if self.dataset[d["name"]].get(qid) is None:
+                        self.dataset[d["name"]][qid] = {}
+                    self.dataset[d["name"]][qid][pid] = rate
+            elif file.__contains__("top100"):
+                for row in self.yield_file(file):
+                    qid = getattr(row, "qid")
+                    pid = getattr(row, "pid")
+                    rank = int(getattr(row, "rank"))
+                    score = float(getattr(row, "score"))
+                    if self.dataset[d["name"]].get(qid) is None:
+                        self.dataset[d["name"]][qid] = {}
+                    self.dataset[d["name"]][qid][rank] = (pid, score)
+            else:
+                key = "pid" if "pid" in d["format"] else "qid"
+                for row in self.yield_file(file):
+                    self.dataset[d["name"]][getattr(row, key)] = {
+                        k: v
+                        for k, v in zip(
+                            d["format"],
+                            row,
+                        )
+                        if k != key
+                    }
 
-    def store_in_sqlite(self):
-        """
-        读取文件到sqlitedict中 (外存)
-        """
-        import sqlitedict
 
-        for file, d in self.data_dict.items():
-            print(f"正在处理文件{file}")
-            db = sqlitedict.SqliteDict(
-                os.path.join(self.root_path, "data", f"{d['name']}.db"),
-                tablename=d["name"],
-                autocommit=True,
+class NDCG:
+    def __init__(self, direct_gain=None):
+        self.update(direct_gain)
+
+    @property
+    def length(self):
+        return self.direct_gain.shape[0]
+
+    def __call__(self, direct_gain=None, method="NDCG"):
+        if direct_gain is not None:
+            self.direct_gain = (
+                direct_gain
+                if isinstance(direct_gain, np.ndarray)
+                else np.array(direct_gain)
             )
-            key = "pid" if "pid" in d["format"] else "qid"
-            for row in self.yield_file(file):
-                db[getattr(row, key)] = {
-                    k: v
-                    for k, v in zip(
-                        d["format"],
-                        row,
-                    )
-                    if k != key
-                }
-            print(f"文件{file}处理完成")
-            db.close()
+        if method == "NDCG":
+            return self.NDCG()
+        elif method == "DCG":
+            return self.DCG()
+        elif method == "NCG":
+            return self.NCG()
+        elif method == "CG":
+            return self.CG()
+        else:
+            raise ValueError("method must be NDCG, DCG, NCG or CG")
 
+    def update(self, rating):
+        if isinstance(rating, (list, tuple)):
+            self.direct_gain = np.array(rating)
+        elif isinstance(rating, np.ndarray):
+            self.direct_gain = rating
+        elif rating is None:
+            pass
+        else:
+            raise ValueError("rating must be list, tuple or ndarray")
 
-if __name__ == "__main__":
-    data_processor = Data(root_path="../")
+    def CG(self, vector=None):
+        """
+        Cumulative Gain
+        """
+        if vector is None:
+            vector = self.direct_gain
+        return np.cumsum(vector)
+
+    def DCG(self, b=2, vector=None):
+        """
+        Discounted Cumulative Gain
+        """
+        if vector is None:
+            vector = self.direct_gain
+        cg = self.CG(vector)
+        res = np.zeros_like(vector, dtype=float)
+        for i in range(b - 1):
+            res[i] = cg[i]
+        for i in range(b - 1, self.length):
+            res[i] = res[i - 1] + vector[i] / math.log(b, i + 1)
+            # res[i] = res[i - 1] + vector[i] / log(b, i + 1)
+
+        return res
+
+    def BV(self):
+        """
+        Best Vector
+        """
+        return np.sort(self.direct_gain)[::-1]
+
+    def NCG(self, vector=None):
+        """
+        Normalized Cumulative Gain
+        """
+        return self.CG() / self.CG(self.BV())
+
+    def NDCG(self, b=2):
+        """
+        Normalized Discounted Cumulative Gain
+        """
+        return self.DCG(b) / self.DCG(b, self.BV())
+
+    def NDCG_at_k(self, rating=None, k=10, b=2):
+        """
+        Normalized Discounted Cumulative Gain at k
+        """
+        if rating is not None:
+            self.update(rating)
+        return self.NDCG(b)[k - 1]

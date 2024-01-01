@@ -1,87 +1,65 @@
+from utils import logger
+
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from torch import nn
+from transformers import AutoModelForSequenceClassification
+from typing import List
 
+class BERTReranker(nn.Module):
+    def __init__(
+        self,
+        args,
+        pretrained_path: str,
+        num_example: int = 5,
+        max_len: int = 512,
+        freeze: bool = False,
+        replace_classifier: bool = True,
+    ):
+        super().__init__()
+        self.args = args
+        self.num_example = num_example
+        self.max_len = max_len
+        self.bert = AutoModelForSequenceClassification.from_pretrained(pretrained_path)
+        if freeze:
+            self.freeze_bert()
+        if replace_classifier:
+            self.replace_classifier()
 
-class Rerank(nn.Module):
-    def __init__(self, pretrained_path, max_length=512, replace_classifer=False):
-        super(Rerank, self).__init__()
-        self.max_length = max_length
-        self.tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
-        self.model = AutoModelForSequenceClassification.from_pretrained(pretrained_path)
-        if replace_classifer:
-            self.model.classifier = nn.Sequential(
-                nn.Linear(768, 256),
-                nn.GELU(),
-                nn.Linear(256, 1),
-            )
-        self.freeze()
-
-    def forward(self, input_ids, attention_mask=None, token_type_ids=None):
-        outputs = self.model(
-            input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids
+    def replace_classifier(self):
+        classifier = nn.Sequential(
+            nn.Linear(self.bert.config.hidden_size, 256),
+            nn.GELU(),
+            nn.Linear(256, 1),
         )
-        return outputs
+        # init
+        classifier = self.init_params(classifier)
+        self.bert.classifier = classifier
+    
+    def init_params(self, classifier: nn.Module):
+        for param in classifier.parameters():
+            if param.dim() > 1:
+                nn.init.xavier_uniform_(param)
+            else:
+                nn.init.constant_(param, 0)
+        return classifier
 
-    def encode(self, query, passage):
-        if isinstance(passage, str):
-            inputs = self.tokenizer(
-                query, passage, return_tensors="pt", padding=True, truncation=True
-            )
-            return (
-                inputs["input_ids"],
-                inputs["attention_mask"],
-                inputs["token_type_ids"],
-            )
-        elif isinstance(passage, (tuple, list, set)):
-            return self.encode_batch(query, passage)
-
-    def encode_batch(self, query, passages):
-        inputs_ids_batch = torch.empty(
-            (len(passages), self.max_length), dtype=torch.long
-        )
-        attention_mask_batch = torch.empty(
-            (len(passages), self.max_length), dtype=torch.long
-        )
-        token_type_ids_batch = torch.empty(
-            (len(passages), self.max_length), dtype=torch.long
-        )
-        for i, passage in enumerate(passages):
-            inputs = self.tokenizer(
-                query,
-                passage,
-                return_tensors="pt",
-                padding="max_length",
-                truncation=True,
-                max_length=self.max_length,
-            )
-            inputs_ids_batch[i] = inputs["input_ids"][0]
-            attention_mask_batch[i] = inputs["attention_mask"][0]
-            token_type_ids_batch[i] = inputs["token_type_ids"][0]
-        return inputs_ids_batch, attention_mask_batch, token_type_ids_batch
-
-    def score(self, query, passage):
-        input_ids, attention_mask, token_type_ids = self.encode(query, passage)
-        with torch.no_grad():
-            logits = self.forward(input_ids, attention_mask, token_type_ids).logits
-        return logits
-
-    def freeze(self):
-        for _, param in self.model.bert.named_parameters():
+    def freeze_bert(self):
+        for param in self.bert.parameters():
             param.requires_grad = False
 
+    def forward(self, net_inputs):
+        # net_inputs: [B, N, L] -> [B*N, L]
+        sample_num = net_inputs["input_ids"].shape[1]
+        net_inputs["input_ids"] = net_inputs["input_ids"].view(-1, self.max_len)
+        net_inputs["attention_mask"] = net_inputs["attention_mask"].view(-1, self.max_len)
+        out = self.bert(**net_inputs, output_hidden_states=True)
+        logits, hidden_states = out["logits"], out["hidden_states"][-1]
+        # logits: [B*N, 1] -> [B, N]
+        logits = logits.view(-1, sample_num)
+        # hidden_states: [B*N, L, H] -> [B, N, L, H]
+        hidden_states = hidden_states.view(-1, sample_num, self.max_len, hidden_states.shape[-1])
+        return logits, hidden_states
 
-if __name__ == "__main__":
-    path = "model/Reranker"
-    model = Rerank(path, replace_classifer=True)
-    query = "What is the capital of China?"
-    passage = "Beijing is the capital of China."
-    passages = [
-        "Beijing is the capital of China.",
-        "Shanghai is the largest city in China.",
-    ]
-    score = model.score(query, passage)
-    print(score)
-    score = model.score(query, passages)
-    print(score)
+    def save(self, path: str):
+        logger(f"Saving model to {path}")
+        self.bert.save_pretrained(path)
